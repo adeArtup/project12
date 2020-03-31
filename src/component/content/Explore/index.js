@@ -13,13 +13,14 @@ import "./explore.css";
 
 class Explorer extends React.Component {
   componentDidMount() {
-    console.log(urlDetail,'<===========================l');
+    
     this.props.fetchSwapiAction();
-    this.props.fetchProfileData(this.props.urlDetail);
+    // this.props.fetchProfileData(this.props.urlDetail);
   }
 
   selectProfile = urlDetail => {
-    this.props.updateUrlDetailAction(urlDetail);
+    console.log(urlDetail);
+    // this.props.updateUrlDetailAction(urlDetail);
   };
 
   render() {
@@ -34,7 +35,7 @@ class Explorer extends React.Component {
           {this.props.swapiD.map(data => {
             const url =
               "https://www.omdbapi.com/?apikey=1c9c8795&t="+data['Title'];
-            console.log(url,'<============url');
+            // console.log(url,'<============url');
             return (
               <div className="card pmee sec">
                 <div className="card-body">
@@ -72,12 +73,12 @@ class Explorer extends React.Component {
 
 const mapStateToProps = state => ({
   swapiD: state.swapiD.data,
-  urlDetail: state.selectedProfile.urlDetail
+  // urlDetail: state.selectedProfile.urlDetail
 });
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
-  fetchProfileData: () => dispatch(fetchProfileData()),
-  updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
+  // fetchProfileData: () => dispatch(fetchProfileData()),
+  // updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explorer);
