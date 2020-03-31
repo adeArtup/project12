@@ -6,7 +6,7 @@ const appStore = {
   selectedProfile: {
     loading: false,
     data: {},
-    urlDetail : 'http://www.omdbapi.com/?i=tt3896198&apikey=1c9c8795&s=avenger'
+    urlDetail : 'https://www.omdbapi.com/?i=tt3896198&apikey=1c9c8795&s=avenger'
   }
 };
 
