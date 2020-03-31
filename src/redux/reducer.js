@@ -66,23 +66,23 @@ const app = (state = { ...appStore }, action) => {
           loading: false
         }
       };
-  //   case "UPDATE_URL_DETAIL": {
-  //     console.log(action.payload,'<=================');
-  //     return {
-  //       ...state,
-  //       selectedProfile: {
-  //         ...state.selectedProfile,
-  //         urlDetail: action.payload
-  //       }
-  //     };
-  //   }
+    case "UPDATE_URL_DETAIL": {
+      console.log(action.payload,'<=================UPT');
+      return {
+        ...state,
+        selectedProfile: {
+          ...state.selectedProfile,
+          urlDetail: action.payload
+        }
+      };
+    }
 
-  //   case "CLEAR_SWAPI_DATA":
-  //     return {
-  //       ...state,
-  //       selectedProfile: appStore.selectedProfile,
-  //       swapiD: appStore.swapiD
-  //     };
+    case "CLEAR_SWAPI_DATA":
+      return {
+        ...state,
+        selectedProfile: appStore.selectedProfile,
+        swapiD: appStore.swapiD
+      };
     default:
       return state;
   }
