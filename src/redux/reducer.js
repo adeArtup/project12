@@ -83,9 +83,9 @@ const app = (state = { ...appStore }, action) => {
   //       selectedProfile: appStore.selectedProfile,
   //       swapiD: appStore.swapiD
   //     };
-  //   default:
-  //     return state;
-  // }
+    default:
+      return state;
+  }
 };
 
 export default app;
