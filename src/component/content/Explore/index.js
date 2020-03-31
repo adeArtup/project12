@@ -21,6 +21,7 @@ class Explorer extends React.Component {
   }
 
   selectProfile = (urlDetail) => {
+    console.log(urlDetail,'<===================url2')
     this.props.fetchProfileData(urlDetail)
   };
 
