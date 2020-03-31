@@ -16,7 +16,6 @@ class Explorer extends React.Component {
     
     this.props.fetchSwapiAction();
     console.log(this.props.urlDetail,'<===================url')
-    this.props.fetchProfileData(this.props.urlDetail);
   }
 
   selectProfile = urlDetail => {

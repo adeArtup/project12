@@ -36,7 +36,7 @@ class Detail extends React.Component {
       <React.Fragment>
         <Header />
         <div style={{ width: '100%', height: '100px', marginTop: "10vh", backgroundColor: 'cyan'}} >
-                        <p>selected Profile: {loadingProfile ? '...Loading': selectedProfile.name} </p>
+                        <p>selected Profile: {loadingProfile ? '...Loading': selectedProfile['Title']} </p>
                         
                 </div>
         {/* <br />
