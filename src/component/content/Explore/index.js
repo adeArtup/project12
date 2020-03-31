@@ -15,7 +15,8 @@ class Explorer extends React.Component {
   componentDidMount() {
     
     this.props.fetchSwapiAction();
-    // this.props.fetchProfileData(this.props.urlDetail);
+    console.log(this.props.urlDetail,'<===================url')
+    this.props.fetchProfileData(this.props.urlDetail);
   }
 
   selectProfile = urlDetail => {
@@ -73,11 +74,11 @@ class Explorer extends React.Component {
 
 const mapStateToProps = state => ({
   swapiD: state.swapiD.data,
-  // urlDetail: state.selectedProfile.urlDetail
+  urlDetail: state.selectedProfile.urlDetail
 });
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
-  // fetchProfileData: () => dispatch(fetchProfileData()),
+  fetchProfileData: () => dispatch(fetchProfileData()),
   // updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
 });
 

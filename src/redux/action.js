@@ -24,7 +24,7 @@ export const fetchSwapiAction = () => {
 }
 
 export const fetchProfileData = (params) => {
-  console.log(params,'<===================');
+  console.log(params,'<===================X');
   return dispatch => {
     dispatch({
       type: 'FETCH_SWAPI_DETAIL'
@@ -46,11 +46,11 @@ export const fetchProfileData = (params) => {
   }
 }
 
-export const updateUrlDetailAction = urlDetail => ({
-  type: 'UPDATE_URL_DETAIL',
-  payload: urlDetail
-})
+// export const updateUrlDetailAction = urlDetail => ({
+//   type: 'UPDATE_URL_DETAIL',
+//   payload: urlDetail
+// })
 
-export const clearSwapiAction = () => ({
-  type: 'CLEAR_SWAPI_DATA'
-})
+// export const clearSwapiAction = () => ({
+//   type: 'CLEAR_SWAPI_DATA'
+// })
