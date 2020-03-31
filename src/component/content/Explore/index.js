@@ -14,18 +14,16 @@ import "./explore.css";
 class Explorer extends React.Component {
   componentDidMount() {
     this.props.fetchSwapiAction();
-    this.props.fetchProfileData(this.props.urlDetail);  
+    this.props.fetchProfileData(this.props.urlDetail);
   }
 
   selectProfile = urlDetail => {
     this.props.updateUrlDetailAction(urlDetail);
   };
 
-  
-
   render() {
     const { loadingProfile, selectedProfile } = this.props;
-    
+
     return (
       <React.Fragment>
         <Header />
@@ -33,36 +31,38 @@ class Explorer extends React.Component {
 
         {/* <div className="row"> */}
         <div className="card-content-fth ">
-        {this.props.swapiD.map(data => {
-          const url = "http://www.omdbapi.com/?apikey=1c9c8795&t=Captain America: The First Avenger";
-          return (
-                  <div className="card pmee sec">
-                    <div className="card-body">
-                      <h5 className="card-title">{data["Title"]}</h5>
-                      <hr />
-          <h6 className="card-subtitle mb-2 text-muted">{data['Year']}</h6>
-                      <p className="card-text">
-                        <img
-                          src={data["Poster"]}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                      </p>
-                      <label>0 views</label>
-                      <br />
-                      <Link
-                        to={{pathname:`/Detail/${data['Title']}`}}
-                        className="btn btn-info btn-sm card-photo-btn"
-                        onClick={() => this.selectProfile(url)}
-                      >
-                        View Detail
-                      </Link>
-                    </div>
-                  </div>
-                // </div>
+          {this.props.swapiD.map(data => {
+            const url =
+              "https://www.omdbapi.com/?apikey=1c9c8795&t=Captain America: The First Avenger";
+            return (
+              <div className="card pmee sec">
+                <div className="card-body">
+                  <h5 className="card-title">{data["Title"]}</h5>
+                  <hr />
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    {data["Year"]}
+                  </h6>
+                  <p className="card-text">
+                    <img
+                      src={data["Poster"]}
+                      style={{ width: "200px", height: "200px" }}
+                    />
+                  </p>
+                  <label>0 views</label>
+                  <br />
+                  <Link
+                    to={{ pathname: `/Detail/${data["Title"]}` }}
+                    className="btn btn-info btn-sm card-photo-btn"
+                    onClick={() => this.selectProfile(url)}
+                  >
+                    View Detail
+                  </Link>
+                </div>
+              </div>
               // </div>
-            
-          );
-        })}
+              // </div>
+            );
+          })}
         </div>
       </React.Fragment>
     );
