@@ -54,7 +54,7 @@ class Explorer extends React.Component {
                   <label>0 views</label>
                   <br />
                   <Link
-                    to='#'
+                    to={{pathname:`./Detail/${data['Title']}`}}
                     className="btn btn-info btn-sm card-photo-btn"
                     onClick={() => this.selectProfile(url)}
                   >
