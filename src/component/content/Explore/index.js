@@ -15,12 +15,13 @@ class Explorer extends React.Component {
   componentDidMount() {
     
     this.props.fetchSwapiAction();
+    this.props.fetchProfileData(this.props.urlDetail)
     console.log(this.props.urlDetail,'<===================url')
   }
 
   selectProfile = urlDetail => {
-    console.log(urlDetail);
-    // this.props.updateUrlDetailAction(urlDetail);
+    console.log(urlDetail,'<===================A');
+    this.props.updateUrlDetailAction(urlDetail);
   };
 
   render() {
@@ -35,7 +36,7 @@ class Explorer extends React.Component {
           {this.props.swapiD.map(data => {
             const url =
               "https://www.omdbapi.com/?apikey=1c9c8795&t="+data['Title'];
-            // console.log(url,'<============url');
+            
             return (
               <div className="card pmee sec">
                 <div className="card-body">
@@ -78,7 +79,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
   fetchProfileData: () => dispatch(fetchProfileData()),
-  // updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
+  updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explorer);
