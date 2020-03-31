@@ -23,7 +23,6 @@ class Explorer extends React.Component {
   };
 
   render() {
-    const { loadingProfile, selectedProfile } = this.props;
 
     return (
       <React.Fragment>
@@ -34,7 +33,8 @@ class Explorer extends React.Component {
         <div className="card-content-fth ">
           {this.props.swapiD.map(data => {
             const url =
-              "https://www.omdbapi.com/?apikey=1c9c8795&t=Captain America: The First Avenger";
+              "https://www.omdbapi.com/?apikey=1c9c8795&t="+data['Title'];
+            console.log(url,'<============url');
             return (
               <div className="card pmee sec">
                 <div className="card-body">
