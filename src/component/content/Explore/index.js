@@ -12,20 +12,20 @@ import { Link } from "react-router-dom";
 import "./explore.css";
 
 class Explorer extends React.Component {
+  
   componentDidMount() {
     
     this.props.fetchSwapiAction();
     this.props.fetchProfileData(this.props.urlDetail)
-    console.log(this.props.urlDetail,'<===================url')
+    
   }
 
   selectProfile = urlDetail => {
-    console.log(urlDetail,'<===================A');
-    this.props.updateUrlDetailAction(urlDetail);
+    this.props.fetchProfileData(urlDetail)
   };
 
   render() {
-
+    console.log(this.props.urlDetail,'<===================url')
     return (
       <React.Fragment>
         <Header />
@@ -79,7 +79,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
   fetchProfileData: () => dispatch(fetchProfileData()),
-  updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
+  // updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explorer);
