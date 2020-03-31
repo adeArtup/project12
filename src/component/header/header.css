@@ -1,0 +1,8 @@
+.slink {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+.slink:hover {
+   color: #cccccc;
+   text-decoration: none;
+}
