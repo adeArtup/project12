@@ -16,17 +16,16 @@ class Explorer extends React.Component {
   componentDidMount() {
     
     this.props.fetchSwapiAction();
-    this.props.fetchProfileData(this.props.urlDetail)
+    // this.props.fetchProfileData(this.props.urlDetail)
     
   }
 
   selectProfile = (urlDetail) => {
-    console.log(urlDetail,'<===================url2')
-    this.props.fetchProfileData(urlDetail)
+    this.props.updateUrlDetailAction(urlDetail)
   };
 
   render() {
-    console.log(this.props.urlDetail,'<===================url')
+  
     return (
       <React.Fragment>
         <Header />
@@ -79,8 +78,8 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
-  fetchProfileData: () => dispatch(fetchProfileData()),
-  // updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
+  // fetchProfileData: () => dispatch(fetchProfileData()),
+  updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explorer);
