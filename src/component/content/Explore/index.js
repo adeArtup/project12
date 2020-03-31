@@ -13,6 +13,7 @@ import "./explore.css";
 
 class Explorer extends React.Component {
   componentDidMount() {
+    console.log(urlDetail,'<===========================l');
     this.props.fetchSwapiAction();
     this.props.fetchProfileData(this.props.urlDetail);
   }
