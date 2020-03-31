@@ -20,7 +20,7 @@ class Explorer extends React.Component {
     
   }
 
-  selectProfile = urlDetail => {
+  selectProfile = (urlDetail) => {
     this.props.fetchProfileData(urlDetail)
   };
 
@@ -48,13 +48,13 @@ class Explorer extends React.Component {
                   <p className="card-text">
                     <img
                       src={data["Poster"]}
-                      style={{ width: "200px", height: "200px" }}
+                      style={{ width: "220px", height: "200px" }}
                     />
                   </p>
                   <label>0 views</label>
                   <br />
                   <Link
-                    to={{ pathname: `/Detail/${data["Title"]}` }}
+                    to='#'
                     className="btn btn-info btn-sm card-photo-btn"
                     onClick={() => this.selectProfile(url)}
                   >
