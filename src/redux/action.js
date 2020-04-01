@@ -29,7 +29,7 @@ export const updateUrlDetailAction = urlDetail => ( {
 })
 
 export const fetchProfileData = (params) => {
-  console.log(params, `<=================== res ==================`);
+  // console.log(params, `<=================== res ==================`);
   return dispatch => {
     dispatch({
       type: 'FETCH_SWAPI_DETAIL'

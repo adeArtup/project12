@@ -26,7 +26,7 @@ class Explorer extends React.Component {
   }
 
   selectProfile = (urlDetail) => {
-    console.log(urlDetail,'<=============== url')
+    // console.log(urlDetail,'<=============== url')
     this.props.updateUrlDetailAction(urlDetail)
   };
 
