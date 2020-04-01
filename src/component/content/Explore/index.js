@@ -12,15 +12,21 @@ import { Link } from "react-router-dom";
 import "./explore.css";
 
 class Explorer extends React.Component {
+
+  // componentDidUpdate(urlDetail){
+  //   this.props.updateUrlDetailAction(urlDetail);
+  // }
   
   componentDidMount() {
     
     this.props.fetchSwapiAction();
     // this.props.fetchProfileData(this.props.urlDetail)
     
+    
   }
 
   selectProfile = (urlDetail) => {
+    console.log(urlDetail,'<=============== url')
     this.props.updateUrlDetailAction(urlDetail)
   };
 
@@ -73,13 +79,12 @@ class Explorer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  swapiD: state.swapiD.data,
-  urlDetail: state.selectedProfile.urlDetail
+  swapiD: state.swapiD.data
 });
 const mapDispatchToProps = dispatch => ({
   fetchSwapiAction: () => dispatch(fetchSwapiAction()),
   // fetchProfileData: () => dispatch(fetchProfileData()),
-  updateUrlDetailAction: () => dispatch(updateUrlDetailAction())
+  updateUrlDetailAction: (urlDetail) => dispatch(updateUrlDetailAction(urlDetail))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explorer);

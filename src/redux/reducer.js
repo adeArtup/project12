@@ -11,6 +11,7 @@ const appStore = {
 };
 
 const app = (state = { ...appStore }, action) => {
+  console.log(action.payload,'<=================UPT');
   switch (action.type) {
     case "swap_fetch":
       return {
@@ -67,7 +68,6 @@ const app = (state = { ...appStore }, action) => {
         }
       };
     case "UPDATE_URL_DETAIL": {
-      console.log(action.payload,'<=================UPT');
       return {
         ...state,
         selectedProfile: {

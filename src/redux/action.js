@@ -23,15 +23,19 @@ export const fetchSwapiAction = () => {
   }
 }
 
+export const updateUrlDetailAction = urlDetail => ( {
+  type: 'UPDATE_URL_DETAIL',
+  payload: urlDetail
+})
+
 export const fetchProfileData = (params) => {
-  console.log(params,'<===================X');
+  console.log(params, `<=================== res ==================`);
   return dispatch => {
     dispatch({
       type: 'FETCH_SWAPI_DETAIL'
     })
     axios.get(params)
     .then(res => {
-      // console.log(res, `<=================== res ==================`);
       dispatch({
         type: 'FETCH_SWAPI_DETAIL_SUCCESS',
         payload: res.data
@@ -45,11 +49,6 @@ export const fetchProfileData = (params) => {
     })
   }
 }
-
-export const updateUrlDetailAction = urlDetail => ({
-  type: 'UPDATE_URL_DETAIL',
-  payload: urlDetail
-})
 
 export const clearSwapiAction = () => ({
   type: 'CLEAR_SWAPI_DATA'

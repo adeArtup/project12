@@ -13,13 +13,10 @@ export default function Main() {
       <Router>
         <Switch>
           <Route path="/Detail" component={Detail}>
-            {/* <About /> */}
           </Route>
           <Route path="/Explore" component={Explore}>
-            {/* <Users /> */}
           </Route>
           <Route path="/" component={App}>
-            {/* <Home /> */}
           </Route>
         </Switch>
       </Router>

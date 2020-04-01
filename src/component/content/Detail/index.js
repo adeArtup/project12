@@ -3,22 +3,23 @@ import Header from "../../../component/header";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
+  fetchProfileData,
   updateUrlDetailAction,
-  clearSwapiAction,
-  fetchProfileData
+  clearSwapiAction
+  
 } from "../../../redux/action";
-
-import Button from "react-bootstrap/Button";
 
 class Detail extends React.Component {
 
-
+  
   componentDidUpdate(prevProps){
+    console.log(prevProps.urlDetail,'<===========U')
     if(prevProps.urlDetail !== this.props.urlDetail){
       this.props.fetchProfileData(this.props.urlDetail)   
     }
   }
   componentDidMount() {
+    console.log(this.props.urlDetail,'<===========U2')
     this.props.fetchProfileData(this.props.urlDetail)  
   }
 
@@ -26,17 +27,18 @@ class Detail extends React.Component {
     this.props.clearSwapiAction();
   }
 
-  selectProfile = urlDetail => {
-    this.props.updateUrlDetailAction(urlDetail);
-  };
+  // selectProfile = urlDetail => {
+  //   this.props.updateUrlDetailAction(urlDetail);
+  // };
 
   render() {
+    console.log(this.props.urlDetail)
     const { loadingProfile, selectedProfile } = this.props
     return (
       <React.Fragment>
         <Header />
-        <div style={{ width: '100%', height: '100px', marginTop: "10vh", backgroundColor: 'cyan'}} >
-                        <p>selected Profile: {loadingProfile ? '...Loading': selectedProfile['Title']} </p>
+        <div style={{ width: '80%', height: '100px', margin:'0 auto', marginTop: "10vh", backgroundColor: '#f8f9fa'}} >
+                        <p>Movie Title: {loadingProfile ? '...Loading': selectedProfile['Title']} </p>
                         
                 </div>
         {/* <br />
@@ -77,9 +79,9 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
  
-  updateUrlDetailAction: () => dispatch(updateUrlDetailAction()),
+  // updateUrlDetailAction: () => dispatch(updateUrlDetailAction()),
   clearSwapiAction: () => dispatch(clearSwapiAction()),
-  fetchProfileData: () => dispatch(fetchProfileData())
+  fetchProfileData: (params) => dispatch(fetchProfileData(params))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
